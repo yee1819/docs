@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="kirari的个人笔记">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="keywords" content="docsify,音乐爱好者,kiko2568">
+    <meta name="author" content="kirari">
+
+    <!-- theme 站点 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+<!-- toc1 -->
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+<!-- 右上角目录 toc2 -->
+  <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
+<!-- 暗黑模式 位置太逆天了 -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/style.min.css"/> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css"> -->
+<!-- 侧边栏分类   -->
+  <!-- <link rel="stylesheet" href="//vox.cab/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> 不可用  -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+
+<!-- icon -->
+<link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
+<link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
+<link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
+<link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
+
+
+<!-- google icon https://fonts.google.com/icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"/>
+
+
+<!-- 一堆莫名其妙的bug   不管了   -->
+  <style>
+    li.file li::before{
+      content: '';
+    }
+    li.open li::before{
+      content: '';
+    }
+    .sidebar-nav li.file li.open.file.active::before {
+      content: "👉";
+    }
+    .sidebar-nav li.file li.active.file.collapse::before {
+      content: "👉";
+    }
+    .sidebar-nav li.file li.file.active::before {
+      content: "👉";
+    }
+
+  </style>
+
+ 
+
+</head>
+
+
+<body>
+  <nav>
+</nav>
+<div id="app">加载中，请稍后...</div>
+  <script>
+    window.$docsify = {
+      logo:'',
+      name: "Kirari",
+      nameLink: 'https://kiko2568.top',
+      repo: '',
+      loadSidebar: true,
+      loadNavbar: false,
+      coverpage: true,
+      onlyCover: true,
+      alias: {
+      '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      subMaxLevel: 2,
+      auto2top: true,
+      search: {
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '找不到结果',
+        depth: 3,
+      },
+      mergeNavbar: true,
+      // formatUpdated: "更新于{YYYY}({YY})/{MM}/{DD} {HH}:{mm}:{ss}:{fff}",
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      },
+      topMargin: 25,
+      //   scrollToTop: {
+      //   auto: true,
+      //   text: '👆',
+      //   right: 12,
+      //   bottom: 52,
+      //   offset: 25
+      // },
+      copyCode: {
+        buttonText: '复制',
+        errorText: 'Error',
+        successText: 'OK!'
+      }, 
+//toc1
+      // toc: {
+      //   scope: '.markdown-section',
+      //   headings: 'h1, h2, h3, h4, h5, h6',
+      //   title: 'Table of Contents',
+      // },
+
+
+      // toc 2
+      toc: {
+        tocMaxLevel: 5,
+        target: 'h2, h3, h4, h5, h6',
+        ignoreHeaders:  ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
+      },
+      pagination: {    previousText: '上一章节',    nextText: '下一章节',    crossChapter: true,    crossChapterText: true,  },
+      tabs: {
+      persist: true, // default
+      sync: false, // default
+      theme: 'classic', // default
+      tabComments: true, // default
+      tabHeadings: true // default
+    },
+    'flexible-alerts': {
+      style:'callout', //flat
+      note: {
+        label: "Hinweis"
+      },
+      tip: {
+        label: "Tipp"
+      },
+      warning: {
+        label: "Warnung"
+      },
+      attention: {
+        label: "Achtung"
+      }
+    },
+    // darkMode:{
+    //   dark: {
+    //     background: "#1c2022",
+    //     toggleBtnBg: "#34495e",
+    //     textColor: "#b4b4b4"
+    //   },
+    //   light: {
+    //     background: "white",
+    //     toggleBtnBg: "var(--theme-color)",
+    //     textColor: "var(--theme-color)"
+    //   }
+    // }
+    plantuml: {
+      skin: 'default',
+    },
+    footer: {
+      copy: '<span><a href="https://kiko2568.top">Kirari</a> &copy; 2024</span><br><a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2024029447号-1</a>',
+      auth: '<br> &nbsp',
+      pre: '<hr/>',
+      style: 'text-align: right;',
+      class: 'class-name',
+    },timeUpdater: {
+      text: "<div align='right' width='200px' style='color:gray;font-size:16px'> Posted @ {docsify-updated}</div>",
+      formatUpdated: "{YYYY}-{MM}-{DD} {HH}:{mm}",
+      whereToPlace: "bottom",  // "top" or "bottom", default to "bottom"
+  },
+  
+
+
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+<!-- 代码复制 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <!-- 统计字数 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <!-- 图片缩放 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- 搜索 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  
+  <!-- 给汉字和数字、单词之间加上 空格 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+
+  <!-- tab 切换框 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<!-- 文本高亮 也就是``之间 以及note-->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+
+<!-- 暗黑模式 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/index.min.js"></script> -->
+
+  <!-- toc1 -->
+  <!-- <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script> -->
+<!-- 右上角目录  toc2-->
+  <script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
+
+
+  <!-- 回到顶部一 -->
+  <!-- <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script> -->
+
+<!-- 回到顶部 二  需要删除scrollToTop -->
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.goup({
+        trigger: 100,
+        bottomOffset: 52,
+        locationOffset: 25,
+        //title: 'TOP',
+        titleAsText: true
+    });
+  });
+  </script>
+<!-- emoji表情支持 -->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<!-- 侧边栏分类   暂时不可用，等下再试试看 -->
+<!-- <script src="//vox.cab/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
+
+<!-- UML -->
+<script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
+
+<!-- 代码高亮 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-properties.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/matlab.min.js"></script>
+<!-- ↑以及 -->
+
+
+<!-- icon -->
+<script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
+
+
+<!-- 页脚 -->
+<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+
+<!-- google icon  -->
+<script src="//unpkg.com/docsify-material-icons/dist/docsify-material-icons.min.js"></script>
+
+
+<!-- 更新时间 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
+
+
+
+<!-- <script>
+
+想动态修改目录样式失败
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 在这里放置你的代码
+  let elements = document.querySelectorAll('li.open li.active');
+  
+  elements.forEach(element => {
+    element.classList.add('fa-door-open');
+  });
+});
+  
+  
+    </script> -->
+
+
+</body>
+</html>
